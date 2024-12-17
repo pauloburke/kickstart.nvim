@@ -231,7 +231,16 @@ require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'github/copilot.vim',
-
+  {
+    'nvim-tree/nvim-tree.lua',
+    opts = {},
+    setup = true,
+    keys = {
+      { '<leader>e', ':NvimTreeToggle<CR>', desc = 'Toggle [E]xplorer' },
+      { '<leader>r', ':NvimTreeRefresh<CR>', desc = '[R]efresh Explorer' },
+      { '<leader>n', ':NvimTreeFindFile<CR>', desc = '[N]avigate to File' },
+    },
+  },
   {
     'folke/snacks.nvim',
     priority = 1000,
